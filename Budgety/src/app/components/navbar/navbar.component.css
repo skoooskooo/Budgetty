@@ -1,0 +1,136 @@
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 180px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #ffffba; 
+    overflow-x: hidden;
+    overflow-y: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    font-family: fantasy;
+    border-radius: 0px 0px 50px 0px;
+    -webkit-box-shadow: 16px -5px 18px -9px rgba(153,153,153,1);
+    -moz-box-shadow: 16px -5px 18px -9px rgba(153,153,153,1);
+    box-shadow: 12px -2px 10px -10px rgba(153,153,153,1);
+  }
+
+
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    
+  }
+
+  .sidenav a.active {
+    color: white;
+    border-radius: 0px 25px 25px 35px;
+    margin-right: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+
+  .sidenav a.active-red {
+    background-color: #F49595; /* Example: Make the active link bold */
+  }
+
+  
+  .sidenav a.active-blue {
+    background-color: #A7C7E7; /* Example: Make the active link bold */
+  }
+
+  .sidenav a.active-green {
+    background-color: #68c4af; /* Example: Make the active link bold */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+
+  .sidenav a.hover-red:hover {
+    color: #F49595
+  }
+
+  .sidenav a.hover-blue:hover {
+    color: #A7C7E7; /* Blue color */
+  }
+
+  .sidenav a.hover-green:hover {
+    color: #68c4af
+  }
+  .sidenav a.selected-hover:hover {
+    color: white; /* Blue color */ 
+  }
+  
+  /* Style page content */
+  .main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+  }
+
+  .logo-image {
+    width: 100px;
+    height: 100px;    
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 50px;
+    background-color: #baffc9;
+  }
+  .logo-image:hover {
+    transform: scale(1.05); /* Slightly enlarge the logo on hover */
+  }
+  
+  .overall-balance{
+    position-anchor: fixed;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;;
+  }
+
+  .balance-text{
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: -15px;
+  }
+
+  .balance-text-title{
+    margin-top: -2px;
+    margin-bottom: 10px;
+    font-family: fantasy;
+    font-weight: lighter;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .balance-text-value{
+    font-family:Arial, Helvetica, sans-serif ;
+    font-weight: lighter;
+    font-size: 19px; 
+    width: 80%;
+    margin-left: 5px;   
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 25px;
+    background-color: white;
+
+  }
+
+  .overall-balance-container{
+    width: 150px;
+    border-radius: 25px;
+    background-color: #f1cbff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 2px;
+    margin: 0px 10px 25px 10px;
+  }
+  

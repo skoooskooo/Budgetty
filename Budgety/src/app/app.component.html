@@ -1,0 +1,8 @@
+<main class="main">
+  <div class="layout">
+    <app-navbar class="navbar" (colorChange)="UpdateChosenContentColor($event)"/>
+      <div class="chosen-content" [style.background-color]="chosenContentColor">
+        <router-outlet />
+      </div>
+  </div>
+</main> 
