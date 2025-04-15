@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Ol7skdyoZgKOZOouIdT1acC73cSPYoQmWNTpvEeDJVE=",
+  "Source": "BudgettyWebApi",
+  "BasePath": "_content/BudgettyWebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

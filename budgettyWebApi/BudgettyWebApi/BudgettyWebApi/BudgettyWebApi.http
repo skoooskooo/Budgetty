@@ -1,0 +1,6 @@
+@BudgettyWebApi_HostAddress = http://localhost:5195
+
+GET {{BudgettyWebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
