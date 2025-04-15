@@ -1,23 +1,38 @@
 [
   {
     "ContainingType": "BudgettyWebApi.Controllers.BudgettyController",
-    "Method": "Get_TestInfo",
-    "RelativePath": "api/budgetty",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [],
-    "EndpointName": "get_TestInfo"
-  },
-  {
-    "ContainingType": "BudgettyWebApi.Controllers.BudgettyController",
     "Method": "GetExampleTable",
     "RelativePath": "get_exampleTable",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BudgettyWebApi.Controllers.BudgettyController",
+    "Method": "GetMonthlyBudget",
+    "RelativePath": "get_MonthlyBudget",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BudgettyWebApi.Controllers.BudgettyController",
+    "Method": "Insert_MonthlyBudget_Value",
+    "RelativePath": "insert_MonthlyBudget_Value",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "value",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

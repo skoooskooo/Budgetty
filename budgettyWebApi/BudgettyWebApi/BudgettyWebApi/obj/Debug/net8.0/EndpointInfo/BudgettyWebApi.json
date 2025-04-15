@@ -5,12 +5,11 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/budgetty": {
+    "/get_exampleTable": {
       "get": {
         "tags": [
           "Budgetty"
         ],
-        "operationId": "get_TestInfo",
         "responses": {
           "200": {
             "description": "OK"
@@ -18,11 +17,42 @@
         }
       }
     },
-    "/get_exampleTable": {
+    "/get_MonthlyBudget": {
       "get": {
         "tags": [
           "Budgetty"
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/insert_MonthlyBudget_Value": {
+      "post": {
+        "tags": [
+          "Budgetty"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"

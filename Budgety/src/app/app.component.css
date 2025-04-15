@@ -1,19 +1,23 @@
 html {
-    overflow: hidden; /* Disable scrollbars */
+    overflow: hidden;
+     /* Disable scrollbars */
   }
   
 .layout {
     display: flex;
     height: 100dvh;/* Full viewport height */
     overflow: hidden;
+
     
   }
 
 .chosen-content    {
     padding: 16px;
     position: absolute;
+    background-color: #A083D5;
     left: 170px;
     top: 30px;
+    
     overflow: hidden;
     height: 90%;
     width: 40%;

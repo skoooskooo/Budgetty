@@ -5,7 +5,7 @@
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #ffffba; 
+    background-color: #F8F3A6; 
     overflow-x: hidden;
     overflow-y: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
@@ -22,7 +22,7 @@
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
-    color: black;
+    color: Black;
     display: block;
     
   }
@@ -32,38 +32,20 @@
     border-radius: 0px 25px 25px 35px;
     margin-right: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #A083D5;
   }
 
 
-  .sidenav a.active-red {
-    background-color: #F49595; /* Example: Make the active link bold */
+  .sidenav a.active-purple {
+    background-color: #A083D5; /* Example: Make the active link bold */
   }
 
-  
-  .sidenav a.active-blue {
-    background-color: #A7C7E7; /* Example: Make the active link bold */
+  .sidenav a.hover:hover {
+    transform: scale(1.07);
+    transition: transform 0.1s ease-in-out;
+
   }
 
-  .sidenav a.active-green {
-    background-color: #68c4af; /* Example: Make the active link bold */
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-
-  .sidenav a.hover-red:hover {
-    color: #F49595
-  }
-
-  .sidenav a.hover-blue:hover {
-    color: #A7C7E7; /* Blue color */
-  }
-
-  .sidenav a.hover-green:hover {
-    color: #68c4af
-  }
-  .sidenav a.selected-hover:hover {
-    color: white; /* Blue color */ 
-  }
   
   /* Style page content */
   .main {
@@ -82,9 +64,46 @@
     background-color: #baffc9;
   }
   .logo-image:hover {
-    transform: scale(1.05); /* Slightly enlarge the logo on hover */
+    transform: scale(1.07);
+    transition: transform 0.2s ease-in-out; /* Slightly enlarge the logo on hover */
   }
-  
+
+  .overall-balance-container{
+    width: 150px;
+    border-radius: 25px;
+    background-color: #A083D5;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 2px;
+    margin: 0px 10px 25px 10px;
+  }
+
+  .overall-no-balance-container{
+    width: 150px;
+    border-radius: 25px;
+    background-color: #A083D5;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 2px;
+    margin: 0px 10px 25px 10px;
+  }
+
+  .overall-no-balance-container:hover {
+    transform: scale(1.07);
+    transition: transform 0.1s ease-in-out;
+  }
+
+  .add-budget-button{
+    width: 120px;
+    margin: 10px 10px 10px 15px;
+    background-color: #A083D5;
+    color: white;
+    border-radius: 20px;
+    font-family: fantasy;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+  }
+
   .overall-balance{
     position-anchor: fixed;
     position: absolute;
@@ -92,7 +111,12 @@
     margin-bottom: 10px;;
   }
 
+  .overall-balance-hidden {
+    display: none; /* Hide the element by default */
+  }
+
   .balance-text{
+    color: white;
     font-family: sans-serif;
     font-size: 15px;
     text-align: center;
@@ -125,12 +149,5 @@
 
   }
 
-  .overall-balance-container{
-    width: 150px;
-    border-radius: 25px;
-    background-color: #f1cbff;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 2px;
-    margin: 0px 10px 25px 10px;
-  }
+
   

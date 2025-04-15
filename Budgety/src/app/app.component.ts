@@ -1,20 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
-  imports: [NavbarComponent,RouterOutlet],
+  imports: [NavbarComponent,RouterOutlet,HttpClientModule],
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  chosenContentColor:string = '#F49595';
   title = 'Budgety';
-
-
-  UpdateChosenContentColor(color:string):void{
-    this.chosenContentColor = color;
-  }
 }

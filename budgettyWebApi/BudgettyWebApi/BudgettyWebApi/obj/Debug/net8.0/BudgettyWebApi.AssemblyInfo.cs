@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BudgettyWebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f3ce59973cff28ce3168f7a92016fbffb531f65")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c9a05a91edfaac6f1fa7e2b84ddb343835896a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("BudgettyWebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BudgettyWebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

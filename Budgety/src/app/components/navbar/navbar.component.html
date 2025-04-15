@@ -3,40 +3,48 @@
   <!--LOGO-->
   <div>
     <a routerLink="overview" class="logo-link" 
-      (click)="setActiveLink('overview', '#F49595')">
+      (click)="setActiveLink('overview')">
       <img class="logo-image" src="assets/images/budget_logo.png" alt="Logo" />
     </a>
   </div>
 
   <!--OVERVIEW-->
   <div class="nav-item">
-    <a  class="hover-red"  routerLink="overview" 
-        [ngClass]="{ 'active active-red': activeLink === 'overview' , 'selected-hover': activeLink === 'overview'}" 
-        (click)="setActiveLink('overview', '#F49595')"> OVERVIEW </a>
+    <a  class="hover"  routerLink="overview" 
+        [ngClass]="{ 'active active-purple': activeLink === 'overview'}" 
+        (click)="setActiveLink('overview')"> OVERVIEW </a>
   </div>
   <!--SPENDING-->
   <div>
-    <a  class="hover-blue"  routerLink="spending"  
-        [ngClass]="{ 'active active-blue': activeLink === 'spending', 'selected-hover': activeLink === 'spending' }" 
-        (click)="setActiveLink('spending', '#A7C7E7')"> SPENDING </a>
+    <a  class="hover"  routerLink="spending"  
+        [ngClass]="{ 'active active-purple': activeLink === 'spending'}" 
+        (click)="setActiveLink('spending')"> SPENDING </a>
   </div>
 
   <div>
-    <a  class="hover-green"  routerLink="user-settings"  
-        [ngClass]="{ 'active active-green': activeLink === 'user-settings', 'selected-hover': activeLink === 'user-settings' }" 
-        (click)="setActiveLink('user-settings', '#68c4af')"> SETTINGS </a>
+    <a  class="hover"  routerLink="user-settings"  
+        [ngClass]="{ 'active active-purple': activeLink === 'user-settings' }" 
+        (click)="setActiveLink('user-settings')"> SETTINGS </a>
   </div>
 
   
   <!--OVERALL BALANCE-->
-  <div class="overall-balance">
-    <h3 class="balance-text-title">Balance</h3>
-    <div class="overall-balance-container">
-      <h1 class="balance-text">DECEMBER</h1>
-      <h3 class="balance-text-value">{{overallBalance()}}</h3>
+  <div>
+    <div class="overall-balance">
+      <h3 class="balance-text-title">Balance</h3>
+      <div class="overall-no-balance-container">
+        <button (click)="openInsertBudget" class="add-budget-button"> ADD<br>MONTHLY<br>BUDGET</button>
+      </div>
+    </div>
+    <div [ngClass]="{ 'overall-balance': !overallBalanceHidden, 'overall-balance-hidden': overallBalanceHidden }">
+      <h3 class="balance-text-title">Balance</h3>
+      <div class="overall-balance-container">
+        <h1 class="balance-text">{{current_month() | uppercase}}</h1>
+        <h3 class="balance-text-value">{{overallBalance()}}</h3>
 
-      <h1 class="balance-text">1st week</h1>
-      <h3 class="balance-text-value">{{overallBalance()}}</h3>
+        <h1 class="balance-text">{{current_week() | uppercase}}</h1>
+        <h3 class="balance-text-value">{{week_Balance()}}</h3>
+      </div>
     </div>
   </div>
 
