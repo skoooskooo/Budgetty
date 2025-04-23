@@ -8,15 +8,15 @@ import  {MatDialog} from '@angular/material/dialog';
 import { AddBudgetDialogComponent } from '../../dialogs/add-budget-dialog/add-budget-dialog.component';
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [
-    RouterLink,
-    NgClass,
-    CommonModule,
-    MatButtonModule],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+    selector: 'app-navbar',
+    imports: [
+        RouterLink,
+        NgClass,
+        CommonModule,
+        MatButtonModule
+    ],
+    templateUrl: './navbar.component.html',
+    styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
   
