@@ -1,19 +1,27 @@
 import { NgClass } from '@angular/common';
-import { Component, EventEmitter, Output, signal } from '@angular/core';
+import { Component, signal ,inject} from '@angular/core';
 import { RouterLink ,Router, NavigationEnd} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UserDataServiceService } from '../../services/user-data-service.service';
+import {MatButton, MatButtonModule} from '@angular/material/button';
+import  {MatDialog} from '@angular/material/dialog';
+import { AddBudgetDialogComponent } from '../../dialogs/add-budget-dialog/add-budget-dialog.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink,NgClass,CommonModule],
+  imports: [
+    RouterLink,
+    NgClass,
+    CommonModule,
+    MatButtonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
   
-  //PROPERTIES
+  //#region PROPERTIES
+  readonly dialog = inject(MatDialog);
   userId: any;
   overallBalanceHidden: boolean = true; // Initially hidden
   activeLink: string = 'overview'; // Default active link
@@ -21,6 +29,8 @@ export class NavbarComponent {
   week_Balance = signal<string>("");
   current_month = signal<string>("");
   current_week = signal<string>(""); 
+  //#endregion
+
 
 
   //METHODS
@@ -28,8 +38,9 @@ export class NavbarComponent {
     this.activeLink = link;
   }
 
-  openInsertBudget(): void{
-    
+  private setActiveLinkFromRoute(): void {
+    const currentRoute = this.router.url.split('/')[1]; 
+    this.activeLink = currentRoute || 'overview'; 
   }
 
   get_CurrentMonth(): string {  // Get the current month as a string
@@ -55,13 +66,19 @@ export class NavbarComponent {
       return "Final Days";
   }
 
-  private setActiveLinkFromRoute(): void {
-    const currentRoute = this.router.url.split('/')[1]; 
-    this.activeLink = currentRoute || 'overview'; 
-  }
-
   private fetchOverallBalance(): void {
-    this.userDataService.getMonthlyBudget(this.userId).subscribe((data: any) => {
+    this.userDataService.getMonthlyBudget(this.userId).subscribe((data: any) => 
+      {
+        console.log("API Response:", data);
+
+        //Checks if data has values
+        if (!data || data.length === 0 || !data[0]?.monthly_budget_value) {
+          console.log("Budget value is undefined or empty. Hiding overall balance.");
+          this.overallBalanceHidden = true;
+          return;
+        }
+
+
       const formattedBalance = new Intl.NumberFormat('pt-PT', {
         style: 'currency',
         currency: 'EUR',
@@ -71,7 +88,10 @@ export class NavbarComponent {
       const budget_value = data[0].monthly_budget_value;
 
       if(budget_value == undefined) 
+      {
+        console.log("Budget value is undefined. Hiding overall balance.");
         this.overallBalanceHidden = true;
+      }
       else
         this.overallBalanceHidden = false; 
 
@@ -79,6 +99,18 @@ export class NavbarComponent {
     });
   }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddBudgetDialogComponent, {
+      width: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialog closed with result:', result);
+      if (result) {
+        this.fetchOverallBalance(); // Refresh the overall balance after closing the dialog
+      }
+    });
+  }
 
 
   //EVENTS

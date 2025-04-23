@@ -28,3 +28,11 @@ html {
 .navbar {
     width: 150px; /* Fixed width for the navbar */
   }
+
+  .custom-dialog-container {
+    transform: translate(-50%, -50%) !important; /* Center the dialog */
+    position: fixed !important; /* Ensure it stays above other components */
+    top: 50% !important;
+    left: 50% !important;
+    z-index: 1000 !important;
+  }
