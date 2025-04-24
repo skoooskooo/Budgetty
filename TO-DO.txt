@@ -1,0 +1,19 @@
+Criar uma tabela de SURPLUS, com os surplus de cada semana , para fazer a conta e inserir o Valor no Surplus Total da tabela Budget_Table
+
+
+
+
+Alterar o Component para inserir o budget Mensal.
+
+Pedir o Monthly Budget e pedir logo por baixo as Expenses fixas.
+
+
+Tabela Expenses :
+
+id int
+expense_month
+description varchar,
+type int (1 = fixed or 2 = daily),
+expense_value decimal (15,4)
+
+

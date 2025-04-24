@@ -3,17 +3,15 @@ import { Component, signal ,inject} from '@angular/core';
 import { RouterLink ,Router, NavigationEnd} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UserDataServiceService } from '../../services/user-data-service/user-data-service.service';
-import {MatButton, MatButtonModule} from '@angular/material/button';
 import  {MatDialog} from '@angular/material/dialog';
 import { AddBudgetDialogComponent } from '../../dialogs/add-budget-dialog/add-budget-dialog.component';
-
+import { UtilsService } from '../../services/utils/utils.service';
 @Component({
     selector: 'app-navbar',
     imports: [
         RouterLink,
         NgClass,
-        CommonModule,
-        MatButtonModule
+        CommonModule
     ],
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css'
@@ -31,8 +29,6 @@ export class NavbarComponent {
   current_week = signal<string>(""); 
   //#endregion
 
-
-
   //METHODS
   setActiveLink(link: string): void {
     this.activeLink = link;
@@ -43,32 +39,12 @@ export class NavbarComponent {
     this.activeLink = currentRoute || 'overview'; 
   }
 
-  get_CurrentMonth(): string {  // Get the current month as a string
-    return new Date().toLocaleString('en-US', { month: 'long' });
-  }
 
-  get_current_MonthWeek(): string { // Get the current week of the month
 
-    const currentday= new Date().getDate();
-    if(currentday <= 7)
-      return "Week 1";
-
-    else if(currentday <= 14)
-      return "Week 2";
-    
-    else if(currentday <= 21)
-      return "Week 3";
-
-    else if(currentday <= 28)
-      return "Week 4";
-
-    else 
-      return "Final Days";
-  }
-
-  private fetchOverallBalance(): void {
+  private fetchOverallBalance(): void 
+  {
     this.userDataService.getMonthlyBudget(this.userId).subscribe((data: any) => 
-      {
+    {
         console.log("API Response:", data);
 
         //Checks if data has values
@@ -77,13 +53,8 @@ export class NavbarComponent {
           this.overallBalanceHidden = true;
           return;
         }
-
-
-      const formattedBalance = new Intl.NumberFormat('pt-PT', {
-        style: 'currency',
-        currency: 'EUR',
-        currencyDisplay: 'narrowSymbol'        
-      }).format(data[0].monthly_budget_value); 
+      
+      const formattedBalance = this.utilsService.FormatCurrency(data[0].monthly_budget_value);
 
       const budget_value = data[0].monthly_budget_value;
 
@@ -101,7 +72,7 @@ export class NavbarComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddBudgetDialogComponent, {
-      width: '400px',
+      width: '420px',
       panelClass: 'custom-dialog-container'
     });
 
@@ -120,8 +91,8 @@ export class NavbarComponent {
     this.userId = 1; // Replace with actual user ID logic
 
     this.setActiveLinkFromRoute(); 
-    this.current_month.set(this.get_CurrentMonth()); 
-    this.current_week.set(this.get_current_MonthWeek()); 
+    this.current_month.set(this.utilsService.get_Current_Month()); 
+    this.current_week.set(this.utilsService.get_current_MonthWeek()); 
     this.fetchOverallBalance();
 
 
@@ -135,6 +106,6 @@ export class NavbarComponent {
 
 
   //CONSTRUCTOR
-  constructor(private router: Router,private userDataService: UserDataServiceService) {}
+  constructor(private router: Router,private userDataService: UserDataServiceService, private utilsService: UtilsService) {}
 
 }

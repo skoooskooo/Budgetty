@@ -1,69 +1,92 @@
-import { Component ,signal} from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+import { Component ,signal, ViewChild} from '@angular/core';
+import { ToastService } from '../../services/toast-service/toast.service';
+import { UserDataServiceService } from '../../services/user-data-service/user-data-service.service';
+import { UtilsService } from '../../services/utils/utils.service';
+import { MonthlyBudget } from '../../models/monthly-budget.model';
+import { FixedExpensesComponent } from '../fixed-expenses/fixed-expenses.component';
+
 
 @Component({
-  selector: 'app-currency-input',
+  selector: 'currency-input',
   standalone: true,
   templateUrl: './currency-input.component.html',
   styleUrl: './currency-input.component.css'
 })
+
 export class CurrencyInputComponent {
-  //#region PROPERTIES
+
+
+  // PROPERTIES
   currencyString = signal<string>("");
-  //#endregion
+  fixedExpensesComponent: any;
 
-  //METHODS 
-  //#region METHODS
-  Click_Ok(): void 
-  { 
-    this.TestBudgetString();
+  //METHODS
+  Validate_Budget_Value(): boolean 
+{
+  const input = this.currencyString();
+  const budget_value = parseFloat(input);
+
+  if (/[a-zA-Z]/g.test(input) || isNaN(budget_value)) 
+    return false;   
+
+  return true; 
   }
 
-  //YOU HAVE TO CREATEA A TOASTER SERVICE IN THE APP MODULE
-  //AND IMPORT IT HERE TO USE IT AND ANYWHERE ELSE IN THE PROGRAM
-  showError(message: string): void {
-    this.toastr.error(message,'Error', 
-      {
-        positionClass: 'toast-top-right',
-        timeOut: 3000, 
-        easeTime:300,
-        toastClass: 'custom-toast'
-      });
-  }
-
-  TestBudgetString()
+  Add_Monthly_Budget(monthlyBudget: MonthlyBudget): void
   {
-    var regExp = /[a-zA-Z]/g;
-            
-    if(regExp.test(this.currencyString()))
+    this.userDataService.insertMonthlyBudget(monthlyBudget).subscribe((data: any) => 
     {
-      this.showError("Please enter a valid currency value.");
-      return;
-    } 
-
-    let currencyValue = parseFloat(this.currencyString());
-
-    if (isNaN(currencyValue)) 
+      console.log("API Response:", data);
+      this.toastService.show_Success("Monthly Budget added successfully.");
+    },
+    (error: any) => 
     {
-      this.showError("Invalid currency value:");
+      console.error("Error adding budget:", error);
+      this.toastService.show_Error("Error adding budget.");
+    });
+
+  }
+
+  public Submit_Monthly_Budget(): void 
+  {
+    //Validates Budget Value Input
+    if (!(this.Validate_Budget_Value())) 
+    {
+      this.toastService.show_Error("Please enter a valid currency value.");
       return;
     }
 
-    //String is OK , Add to Database
+    //Checks for expenses 
+    const expenseList = this.fixedExpensesComponent.exportExpenseList();
+    console.log('Current Expense List:', expenseList);
+
+    //Gets relevant Budget Values
+    const budget_value = parseFloat(this.currencyString());
+    const weekly_budget = this.utilsService.get_Week_Values(budget_value);
+
+    const monthlyBudget: MonthlyBudget = new MonthlyBudget(
+      this.utilsService.get_Current_Month_Number(), 
+      budget_value,                                
+      budget_value,                                
+      weekly_budget[0],                           
+      weekly_budget[1],                             
+      weekly_budget[2],                           
+      weekly_budget[3],              
+      weekly_budget[4]                      
+    );
+ 
+    //Adds Values to Database
+    this.Add_Monthly_Budget(monthlyBudget);
 
   }
 
-
- //#endregion
-  
  //EVENT HANDLERS 
- //#region EVENT HANDLERS
   onInput(event: Event): void {
     const inputElement = event.target as HTMLInputElement; // Cast to HTMLInputElement
     this.currencyString.set(inputElement.value); // Update the signal with the input value
   }
-  //#endregion
+
 
   //CONSTRUCTOR
-  constructor (public toastr: ToastrService) { }
+  constructor (public toastService:ToastService, public userDataService: UserDataServiceService,private utilsService: UtilsService) { }
 }

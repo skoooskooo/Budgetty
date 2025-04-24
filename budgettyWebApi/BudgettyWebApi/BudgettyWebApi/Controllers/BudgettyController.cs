@@ -57,14 +57,13 @@ namespace BudgettyWebApi.Controllers
         [HttpGet("get_MonthlyBudget")]
         public JsonResult GetMonthlyBudget()
         {
-            string procedure = "get_monthly_budget";
             DataTable dt = new DataTable();
 
             try
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    using (SqlCommand command = new SqlCommand(procedure, connection))
+                    using (SqlCommand command = new SqlCommand("get_monthly_budget", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.Add(new SqlParameter("@user_id", 1)); // TEST VALUE FOR USER_ID
@@ -92,17 +91,24 @@ namespace BudgettyWebApi.Controllers
         }
 
         [HttpPost("insert_MonthlyBudget_Value")]
-        public IActionResult Insert_MonthlyBudget_Value([FromBody] string value)
+        public IActionResult Insert_MonthlyBudget_Value([FromBody] int date_month, decimal monthy_budget_value,decimal initial_monthly_budget,decimal week_1,
+            decimal week_2, decimal week_3, decimal week_4, decimal week_5)
         {
-            string procedure = "INSERT INTO budget_table (id,Monthly_Budget_value,user_id) VALUES (1, @Value, 1)";
             DataTable dt = new DataTable();
             try
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    using (SqlCommand command = new SqlCommand(procedure, connection))
+                    using (SqlCommand command = new SqlCommand("insert_monthly_budget", connection))
                     {
-                        command.Parameters.Add(new SqlParameter("@Value", value));
+                        command.Parameters.AddWithValue("@date_month", date_month);
+                        command.Parameters.AddWithValue("@monthly_budget_value", monthy_budget_value);
+                        command.Parameters.AddWithValue("@initial_monthly_budget", initial_monthly_budget);
+                        command.Parameters.AddWithValue("@week_1", week_1);
+                        command.Parameters.AddWithValue("@week_2", week_2);
+                        command.Parameters.AddWithValue("@week_3", week_3);
+                        command.Parameters.AddWithValue("@week_4", week_4);
+                        command.Parameters.AddWithValue("@week_5", week_5);
                         connection.Open();
                         int rowsAffected = command.ExecuteNonQuery();
 

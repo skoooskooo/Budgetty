@@ -1,5 +1,15 @@
 <div class="main-container">
     <h1 class="dialog-title">Current month budget</h1>
 
-    <app-currency-input></app-currency-input>
+
+    <currency-input></currency-input>
+
+    <h1 class="dialog-title-small">Fixed Expenses</h1>
+    <div class="scrollable-expense-list">
+        <app-fixed-expenses></app-fixed-expenses>
+    </div>
+
+    <div class="button-container">
+        <button class="ok-button" (click)="Click_Ok()">OK</button>
+    </div>
 </div>

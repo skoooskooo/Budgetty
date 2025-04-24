@@ -3,13 +3,12 @@
 .custom-dialog-container {
     border-radius: 25px;
     overflow: hidden;
-     /* Ensure content respects the border radius */
      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
 
 .dialog-title{
-    font-family: fantasy;;
+    font-family: fantasy;
     font-size: 25px;
     font-weight: 2;
     color: Black;
@@ -17,35 +16,44 @@
     margin-top: 10px;
   }
 
+  .dialog-title-small{
+    font-family: fantasy;
+    font-size: 25px;
+    font-weight: 2;
+    color: Black;
+    text-align: center;
+    margin-top: 30px;
+  }
 
   .currency-input-component {
-    width:100%;
+    width:100%;        
     flex:1;
     display: flex;
 }
 
   .dialog-text-input-container{
+    
     display:flex;
     white-space: nowrap;
     align-items: center;
-    width: 60%;
+    width: 100%;
     padding: 0 10px;
     gap: 10px;
     height: 50px;
     text-align: center;
     background-color: transparent;
     font-family: sans-serif;
-    border-radius: 25px;
-    border: 2px solid black; /* Add border to input fields */
+    border-radius: 5px;
+    border: 1px solid lightgray;
     
   }
 
 .currency-input {
     background-color: transparent;
-    width: 60%;
+    width: 100%;
     font-size: 20px;
     margin-left: 20px;
-    text-align: right;
+    text-align: center;
     border: none;    
 }
 .currency-input:focus {
@@ -54,21 +62,34 @@
     outline: none;
 }
 
+.description-input:focus,
+.value-input:focus {
+    outline: none; /* Remove the default outline */
+    border: 2px solid darkgray; /* Add a custom green border */
+    border-radius: 4px; /* Optional: Add rounded corners */
+}
+
+
 .euro-text{
     flex: 1;
     font-family: fantasy;
     font-size: 25px;
 }
 
+.button-container {
+  display: grid;
+  justify-content: center; /* Aligns the button to the right */
+  padding: 10px; /* Optional: Add padding for spacing */
+}
 .ok-button {
     flex:1;
-    width: 80px;
-    margin-left: 10px;
+    width: 200px;
     color: white;
     height: 50px;
     background-color: #77DD77;
     border-radius: 25px;
     font-family: fantasy;
+    justify-content: flex-end;
     font-size: 20px;
     cursor: pointer;
     border: none;
@@ -80,9 +101,26 @@
     transition: transform 0.1s ease-in-out;
 }
 
-.custom-toast {
-    font-size: 25px; /* Increase font size */
-    padding: 16px; /* Add padding for larger size */
-    border-radius: 15px; /* Optional: Add rounded corners */
-    background-color: #f44336; /* Optional: Customize background color */
-  }
+.custom-error-toast {
+  font-family: fantasy;
+  font-weight: lighter;
+  margin-bottom: 16px;
+  font-size: 20px;
+  padding: 16px;
+  border-radius: 25px;
+  background-color: #FF746C;
+  color: black ;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.scrollable-expense-list {
+  background-color: white;
+  max-height: 300px; /* Set a fixed height for the expense list */
+  overflow-y: auto; /* Enable vertical scrolling */
+  direction: rtl;
+  margin-top: 10px; /* Optional: Add spacing above the list */
+}
+
+.scrollable-expense-list > * {
+  direction: ltr; /* Ensure the content inside remains left-to-right */
+}

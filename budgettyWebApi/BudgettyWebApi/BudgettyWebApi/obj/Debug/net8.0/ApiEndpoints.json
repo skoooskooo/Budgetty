@@ -28,9 +28,44 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "value",
-        "Type": "System.String",
+        "Name": "date_month",
+        "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "monthy_budget_value",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "initial_monthly_budget",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "week_1",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "week_2",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "week_3",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "week_4",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "week_5",
+        "Type": "System.Decimal",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

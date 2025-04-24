@@ -3,8 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ToastrIconClasses, ToastrService } from 'ngx-toastr';
 
-
-
 @Component({
     selector: 'app-root',
     imports: [

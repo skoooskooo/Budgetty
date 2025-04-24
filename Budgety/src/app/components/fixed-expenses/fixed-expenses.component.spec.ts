@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CurrencyInputComponent } from './currency-input.component';
 
-describe('CurrencyInputComponent', () => {
-  let component: CurrencyInputComponent;
-  let fixture: ComponentFixture<CurrencyInputComponent>;
+import { FixedExpensesComponent } from './fixed-expenses.component';
+
+describe('FixedExpensesComponent', () => {
+  let component: FixedExpensesComponent;
+  let fixture: ComponentFixture<FixedExpensesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CurrencyInputComponent]
+      imports: [FixedExpensesComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CurrencyInputComponent);
+    fixture = TestBed.createComponent(FixedExpensesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

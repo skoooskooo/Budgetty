@@ -1,0 +1,96 @@
+.item-list-container {    
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.horizontal-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.description-input,
+.value-input {
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 125px;
+    text-align: center;
+    
+}
+
+.item-description
+{
+    text-align: left; /* Horizontally center the text */
+    flex: 1; /* Optional: Ensures equal space for description and value */
+}
+.item-value {
+    text-align: center; /* Horizontally center the text */
+    flex: 1; /* Optional: Ensures equal space for description and value */
+}
+
+.description-input:focus,
+.value-input:focus {
+    border-bottom: 1px solid #ccc;
+}
+
+
+.add-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #A2BFFE;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px;
+}
+
+.add-button:hover {
+    background-color: #A2BFFE;
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.item-list {
+    list-style: none;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.item {
+
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between; /* Space between description, value, and remove button */
+    align-items: center; /* Vertically align all child elements */
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    font-family: sans-serif;
+    font-size: 17px;
+}
+
+.remove-button {
+    padding: 7px 15px;
+    font-size: 17px;    
+    color: white;
+    background-color: #ff4d4d;
+    border: none;
+    margin-right: -5px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px;
+  }
+
+.remove-button:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+  }
+
+
