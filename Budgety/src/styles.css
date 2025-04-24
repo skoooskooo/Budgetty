@@ -1,0 +1,88 @@
+@import 'ngx-toastr/toastr';
+
+.custom-dialog-container {
+    border-radius: 25px;
+    overflow: hidden;
+     /* Ensure content respects the border radius */
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+
+.dialog-title{
+    font-family: fantasy;;
+    font-size: 25px;
+    font-weight: 2;
+    color: Black;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+
+  .currency-input-component {
+    width:100%;
+    flex:1;
+    display: flex;
+}
+
+  .dialog-text-input-container{
+    display:flex;
+    white-space: nowrap;
+    align-items: center;
+    width: 60%;
+    padding: 0 10px;
+    gap: 10px;
+    height: 50px;
+    text-align: center;
+    background-color: transparent;
+    font-family: sans-serif;
+    border-radius: 25px;
+    border: 2px solid black; /* Add border to input fields */
+    
+  }
+
+.currency-input {
+    background-color: transparent;
+    width: 60%;
+    font-size: 20px;
+    margin-left: 20px;
+    text-align: right;
+    border: none;    
+}
+.currency-input:focus {
+
+    border:none;
+    outline: none;
+}
+
+.euro-text{
+    flex: 1;
+    font-family: fantasy;
+    font-size: 25px;
+}
+
+.ok-button {
+    flex:1;
+    width: 80px;
+    margin-left: 10px;
+    color: white;
+    height: 50px;
+    background-color: #77DD77;
+    border-radius: 25px;
+    font-family: fantasy;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.ok-button:hover{
+    transform: scale(1.07);
+    transition: transform 0.1s ease-in-out;
+}
+
+.custom-toast {
+    font-size: 25px; /* Increase font size */
+    padding: 16px; /* Add padding for larger size */
+    border-radius: 15px; /* Optional: Add rounded corners */
+    background-color: #f44336; /* Optional: Customize background color */
+  }

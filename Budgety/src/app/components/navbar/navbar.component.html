@@ -33,7 +33,7 @@
     <div class="overall-balance">
       <h3 class="balance-text-title">Balance</h3>
       <div class="overall-no-balance-container">
-        <button mat-raised-button (click)="openDialog()" class="add-budget-button"> ADD<br>MONTHLY<br>BUDGET</button>
+        <button (click)="openDialog()" class="add-budget-button"> ADD<br>MONTHLY<br>BUDGET</button>
       </div>
     </div>
     <div [ngClass]="{ 'overall-balance': !overallBalanceHidden, 'overall-balance-hidden': overallBalanceHidden }">

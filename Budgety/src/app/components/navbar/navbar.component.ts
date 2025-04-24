@@ -2,7 +2,7 @@ import { NgClass } from '@angular/common';
 import { Component, signal ,inject} from '@angular/core';
 import { RouterLink ,Router, NavigationEnd} from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { UserDataServiceService } from '../../services/user-data-service.service';
+import { UserDataServiceService } from '../../services/user-data-service/user-data-service.service';
 import {MatButton, MatButtonModule} from '@angular/material/button';
 import  {MatDialog} from '@angular/material/dialog';
 import { AddBudgetDialogComponent } from '../../dialogs/add-budget-dialog/add-budget-dialog.component';
@@ -101,7 +101,8 @@ export class NavbarComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddBudgetDialogComponent, {
-      width: '400px'
+      width: '400px',
+      panelClass: 'custom-dialog-container'
     });
 
     dialogRef.afterClosed().subscribe(result => {

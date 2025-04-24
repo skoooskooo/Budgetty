@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import {} from '@angular/common/http';
-
+import { ToastrIconClasses, ToastrService } from 'ngx-toastr';
 
 
 
@@ -10,8 +9,7 @@ import {} from '@angular/common/http';
     selector: 'app-root',
     imports: [
         NavbarComponent,
-        RouterOutlet
-    ],
+        RouterOutlet],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })

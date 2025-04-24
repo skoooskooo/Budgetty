@@ -46,8 +46,7 @@
               "RelativeToolTip": "BudgettyWebApi\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAACBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-11T14:54:36.638Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T14:54:36.638Z"
             },
             {
               "$type": "Document",
@@ -57,7 +56,7 @@
               "RelativeDocumentMoniker": "BudgettyWebApi\\Controllers\\BudgettyController.cs",
               "ToolTip": "C:\\Users\\gustavo.jose\\OneDrive - Unipartner IT Services, S.A\\Documents\\Angular Training\\Budgetty\\budgettyWebApi\\BudgettyWebApi\\BudgettyWebApi\\Controllers\\BudgettyController.cs",
               "RelativeToolTip": "BudgettyWebApi\\Controllers\\BudgettyController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwDoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-11T14:54:04.315Z",
               "EditorCaption": ""
@@ -72,8 +71,7 @@
               "RelativeToolTip": "BudgettyWebApi\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-11T15:39:14.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T15:39:14.293Z"
             },
             {
               "$type": "Document",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "BudgettyWebApi\\Controllers\\WeatherForecastController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T14:53:26.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T14:53:26.887Z"
             },
             {
               "$type": "Document",
@@ -98,8 +95,7 @@
               "RelativeToolTip": "BudgettyWebApi\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T14:51:20.741Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T14:51:20.741Z"
             },
             {
               "$type": "Document",
@@ -111,8 +107,7 @@
               "RelativeToolTip": "BudgettyWebApi\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-11T14:51:12.123Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T14:51:12.123Z"
             }
           ]
         }
