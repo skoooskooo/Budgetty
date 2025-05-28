@@ -1,6 +1,7 @@
 .top-title {
-    font-family:  fantasy;
-    font-weight: 100;
+    font-family:  'Inter', sans-serif;
+    font-weight: 700px;
+    letter-spacing: -1px;
     font-size: 40px;   
     color: White; 
     text-align: center;

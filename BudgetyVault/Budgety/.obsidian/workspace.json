@@ -65,12 +65,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Brain Storming/Brain Storming.md",
+                "file": "00 - App Logic/App Logic.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Brain Storming"
+              "title": "App Logic"
             }
           }
         ],
@@ -221,19 +221,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "109abee4d2fb4cd3",
+  "active": "02b0870594640d7d",
   "lastOpenFiles": [
-    "TO-DO/TO-DO.md",
-    "Brain Storming/Brain Storming.md",
-    "App Logic/Expenses.md",
-    "App Logic/App Logic.md",
     "Budgety.md",
-    "Brain Storming",
-    "Fixes/Fixes Main.md",
-    "TO-DO",
-    "App Logic",
+    "03 - Brain Storming/Brain Storming.md",
+    "02 - Fixes/Fixes Main.md",
+    "01 - TO-DO/TO-DO.md",
+    "00 - App Logic/Expenses.md",
+    "00 - App Logic/App Logic.md",
+    "03 - Brain Storming",
+    "01 - TO-DO",
+    "00 - App Logic",
     "Fixes/Fixes Folder",
-    "Fixes",
+    "02 - Fixes",
     "Budgety",
     "desktop.ini"
   ]

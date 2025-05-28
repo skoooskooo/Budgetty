@@ -1,6 +1,10 @@
 {
-  "cssTheme": "Obsidian gruvbox",
+  "cssTheme": "AnuPpuccin",
   "interfaceFontFamily": "Cascadia Mono",
   "textFontFamily": "Cascadia Mono",
-  "monospaceFontFamily": "Cascadia Mono"
+  "monospaceFontFamily": "Cascadia Mono",
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "rainbow-tabs"
+  ]
 }

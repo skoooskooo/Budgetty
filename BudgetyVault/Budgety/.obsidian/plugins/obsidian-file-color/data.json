@@ -1,0 +1,53 @@
+{
+  "cascadeColors": true,
+  "colorBackground": false,
+  "palette": [
+    {
+      "id": "i28RdPhvZRJkxjxIMf50C",
+      "name": "White",
+      "value": "#ffffff"
+    },
+    {
+      "id": "Mt2uemoKClQGJ4KQ23s3Q",
+      "name": "Red",
+      "value": "#f58484"
+    },
+    {
+      "id": "zCSvOCpQdLujYF-knDSwo",
+      "name": "Green",
+      "value": "#5cc768"
+    },
+    {
+      "id": "-A1ap5PznfkIGsG_haCZ2",
+      "name": "Cyan",
+      "value": "#00fbff"
+    },
+    {
+      "id": "aFMY6hZwE16abaELB3XQv",
+      "name": "",
+      "value": "#fbff00"
+    }
+  ],
+  "fileColors": [
+    {
+      "path": "00 - REN GERAL",
+      "color": "i28RdPhvZRJkxjxIMf50C"
+    },
+    {
+      "path": "01 - RenMarkets/🐞 Bugs",
+      "color": "Mt2uemoKClQGJ4KQ23s3Q"
+    },
+    {
+      "path": "01 - RenMarkets/🚀 Features",
+      "color": "zCSvOCpQdLujYF-knDSwo"
+    },
+    {
+      "path": "01 - RenMarkets",
+      "color": "aFMY6hZwE16abaELB3XQv"
+    },
+    {
+      "path": "01 - RenMarkets/Geral",
+      "color": "-A1ap5PznfkIGsG_haCZ2"
+    }
+  ]
+}

@@ -1,43 +1,64 @@
 <div class="sidenav">
 
   <!--LOGO-->
-  <div>
-    <a routerLink="overview" class="logo-link" 
-      (click)="setActiveLink('overview')">
+  <div class="logo-image-container">
+    <a routerLink="overview" class="logo-link" (click)="setActiveLink('overview')">
       <img class="logo-image" src="assets/images/budget_logo.png" alt="Logo" />
     </a>
   </div>
 
   <!--OVERVIEW-->
-  <div class="nav-item">
-    <a  class="hover"  routerLink="overview" 
-        [ngClass]="{ 'active active-purple': activeLink === 'overview'}" 
-        (click)="setActiveLink('overview')"> OVERVIEW </a>
+  <div class="navbar-item">
+    <a class="hover" routerLink="overview" 
+       [ngClass]="{ 'active': activeLink === 'overview'}" 
+       (click)="setActiveLink('overview')"> 
+       Overview 
+       <!-- SVG Icon -->
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="svg-icon" viewBox="0 0 16 16">
+         <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm3.5 8.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1 0-1h6a.5.5 0 0 1 .5.5z"/>
+       </svg>
+    </a>
   </div>
-  <!--SPENDING-->
-  <div>
-    <a  class="hover"  routerLink="spending"  
-        [ngClass]="{ 'active active-purple': activeLink === 'spending'}" 
-        (click)="setActiveLink('spending')"> SPENDING </a>
+  
+  <!-- SPENDING -->
+  <div class="navbar-item">
+    <a class="hover" routerLink="spending" 
+       [ngClass]="{ 'active active-purple': activeLink === 'spending'}" 
+       (click)="setActiveLink('spending')"> 
+       Spending 
+       <!-- SVG Icon -->
+       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="svg-icon" viewBox="0 0 16 16">
+         <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm3.5 8.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1 0-1h6a.5.5 0 0 1 .5.5z"/>
+       </svg>
+    </a>
   </div>
 
-  <div>
-    <a  class="hover"  routerLink="user-settings"  
-        [ngClass]="{ 'active active-purple': activeLink === 'user-settings' }" 
-        (click)="setActiveLink('user-settings')"> SETTINGS </a>
-  </div>
+    <!-- SETTINGS -->
+    <div class="navbar-item">
+      <a class="hover" routerLink="user-settings" 
+         [ngClass]="{ 'active active-purple': activeLink === 'user-settings'}" 
+         (click)="setActiveLink('user-settings')"> 
+         Settings 
+         <!-- SVG Icon -->
+         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="svg-icon" viewBox="0 0 16 16">
+           <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm3.5 8.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1 0-1h6a.5.5 0 0 1 .5.5z"/>
+         </svg>
+      </a>
+    </div>
+
 
   
   <!--OVERALL BALANCE-->
   <div>
     <div class="overall-balance">
-      <div class="overall-no-balance-container">
-        <button (click)="openDialog()" class="add-budget-button"> ADD<br>MONTHLY<br>BUDGET</button>
-      </div>
+
+        <button (click)="openDialog()" class="add-budget-button"> Add monthly<br>budget</button>
+
     </div>
     <div [ngClass]="{ 'overall-balance': !overallBalanceHidden, 'overall-balance-hidden': overallBalanceHidden }">
-      <h3 class="balance-text-title">Balance</h3>
+     
       <div class="overall-balance-container">
+        <h3 class="balance-text-title">Balance</h3>
         <h1 class="balance-text">{{current_month() | uppercase}}</h1>
         <h3 class="balance-text-value">{{overallBalance()}}</h3>
 

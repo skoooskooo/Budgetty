@@ -1,0 +1,5 @@
+/* Color top-level folder names in the file explorer */
+.nav-folder.mod-root > .nav-folder-children > .nav-folder > .nav-folder-title .nav-folder-title-content {
+  color: #FF6347; /* Tomato red – change to any color */
+  font-weight: bold; /* Optional: make them stand out */
+}

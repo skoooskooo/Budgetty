@@ -1,1 +1,0 @@
-- [x] Remover os elementos de INPUT de Expenses do mesmo container que a Lista de Expenses.
