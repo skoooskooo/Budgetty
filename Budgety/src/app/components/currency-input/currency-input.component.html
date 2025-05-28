@@ -1,11 +1,14 @@
 <div class="currency-input-component">
     <div class="dialog-text-input-container">
+
+        <!--Monthly Budget Input-->
         <input 
             class="currency-input" 
             placeholder="Enter Budget" 
             type="text"
-            [value]="currencyString()"
+            [value]="currencyInputString()"
             (input)="onInput($event)"
+            type="number"
 />
         <span class="euro-text">EUR</span>
     </div>

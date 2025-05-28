@@ -1,21 +1,24 @@
 export class Expense {
   id?: number;
   user_id?: number;
-  date?: Date;
+  date?: string;
   description?: string;
   expense_value?: number; 
+  type?: number;
 
   constructor(
     id?: number,
     user_id?: number,
-    date?: Date,
+    date?: string,
     description?: string,
-    expense_value?: number
+    expense_value?: number,
+    type?: number
   ) {
     this.id = id;
     this.user_id = user_id;
     this.date = date;
     this.description = description;
     this.expense_value = expense_value;
+    this.type = type;
   }
 }

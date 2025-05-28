@@ -17,6 +17,11 @@ export class UtilsService {
     return new Date().getMonth() + 1; 
   }
 
+  get_Current_Year_Number(): number
+  {  
+    return new Date().getFullYear(); 
+  }
+
   getDaysInMonth(year: number, month: number): number {
     return new Date(new Date().getFullYear(),new Date().getMonth() + 1, 0).getDate();
   }

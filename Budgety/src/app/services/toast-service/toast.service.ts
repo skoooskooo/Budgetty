@@ -15,10 +15,10 @@ export class ToastService {
   }
 
   show_Success(message: string): void {
-    this.toastr.show(message, 'Error', {
+    this.toastr.show(message, '', {
       positionClass: 'toast-top-right',
       timeOut: 3000,
-      toastClass: 'custom-error-toast'
+      toastClass: 'custom-success-toast'
     });
   }
 

@@ -21,74 +21,65 @@
   },
   {
     "ContainingType": "BudgettyWebApi.Controllers.BudgettyController",
-    "Method": "Insert_MonthlyBudget_Value",
-    "RelativePath": "insert_MonthlyBudget_Value",
+    "Method": "Insert_FixedEXpense",
+    "RelativePath": "insert_FixedExpense",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "date_month",
+        "Name": "user_id",
         "Type": "System.Int32",
         "IsRequired": true
       },
       {
-        "Name": "monthy_budget_value",
+        "Name": "date",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "expense_value",
         "Type": "System.Decimal",
         "IsRequired": false
       },
       {
-        "Name": "initial_monthly_budget",
-        "Type": "System.Decimal",
-        "IsRequired": false
-      },
-      {
-        "Name": "week_1",
-        "Type": "System.Decimal",
-        "IsRequired": false
-      },
-      {
-        "Name": "week_2",
-        "Type": "System.Decimal",
-        "IsRequired": false
-      },
-      {
-        "Name": "week_3",
-        "Type": "System.Decimal",
-        "IsRequired": false
-      },
-      {
-        "Name": "week_4",
-        "Type": "System.Decimal",
-        "IsRequired": false
-      },
-      {
-        "Name": "week_5",
-        "Type": "System.Decimal",
+        "Name": "type",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "BudgettyWebApi.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
+    "ContainingType": "BudgettyWebApi.Controllers.BudgettyController",
+    "Method": "Insert_FixedExpenseList",
+    "RelativePath": "insert_FixedExpenses",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BudgettyWebApi.WeatherForecast, BudgettyWebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "expenses",
+        "Type": "System.Collections.Generic.List\u00601[[BudgettyWebApi.Models.Expense, BudgettyWebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
       }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BudgettyWebApi.Controllers.BudgettyController",
+    "Method": "Insert_MonthlyBudget",
+    "RelativePath": "insert_MonthlyBudget",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "monthly_budget",
+        "Type": "BudgettyWebApi.Models.MonthlyBudget",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

@@ -1,15 +1,35 @@
-<div class="item-list-container">
-    <div class="horizontal-container">
-        <input type="text" class="description-input" placeholder="Description" [(ngModel)]="new_expense.description" />
-        <input type="" class="value-input" placeholder="Value" [(ngModel)]="new_expense.expense_value"/>
-        <button class="add-button" (click)="addExpense()">Add</button>
-    </div>
+<div class="fixed-expenses-container">
+  <!-- Inputs Section -->
+  <div class="inputs-container">
+    <!-- Description Input -->
+    <input
+      type="text"
+      class="description-input"
+      placeholder="Description"
+      [(ngModel)]="new_fixed_expense.description"
+      #descriptionInput
+    />
 
+    <!-- Expense Value -->
+    <input
+      type="number"
+      class="value-input"
+      placeholder="Value"
+      [(ngModel)]="new_fixed_expense.expense_value"
+    />
+
+    <!-- Add Button -->
+    <button class="add-button" (click)="AddFixedExpense()">Add</button>
+  </div>
+
+  <!-- Expense List Section -->
+  <div class="item-list-container">
     <ul class="item-list">
-        <li *ngFor="let expense of expenses;let i = index" class="item">
-            <span class="item-description">{{expense.description}}</span>
-            <span class="item-value">{{expense.expense_value}} €</span>
-            <button class="remove-button" (click)="removeExpense(i)">Remove</button>
-        </li>
+      <li *ngFor="let expense of expenses; let i = index" class="item">
+        <span class="item-description">{{ expense.description }}</span>
+        <span class="item-value">{{ expense.expense_value }} €</span>
+        <button class="remove-button" (click)="RemoveExpense(i)">Remove</button>
+      </li>
     </ul>
+  </div>
 </div>

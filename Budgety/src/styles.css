@@ -113,6 +113,18 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.custom-success-toast {
+  font-family: fantasy;
+  font-weight: lighter;
+  margin-bottom: 16px;
+  font-size: 20px;
+  padding: 16px;
+  border-radius: 25px;
+  background-color: #7dff6c9f;
+  color: black ;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .scrollable-expense-list {
   background-color: white;
   max-height: 300px; /* Set a fixed height for the expense list */

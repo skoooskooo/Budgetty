@@ -29,14 +29,53 @@
         }
       }
     },
-    "/insert_MonthlyBudget_Value": {
+    "/insert_MonthlyBudget": {
+      "post": {
+        "tags": [
+          "Budgetty"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MonthlyBudget"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MonthlyBudget"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MonthlyBudget"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/insert_FixedExpense": {
       "post": {
         "tags": [
           "Budgetty"
         ],
         "parameters": [
           {
-            "name": "monthy_budget_value",
+            "name": "date",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "expense_value",
             "in": "query",
             "schema": {
               "type": "number",
@@ -44,51 +83,11 @@
             }
           },
           {
-            "name": "initial_monthly_budget",
+            "name": "type",
             "in": "query",
             "schema": {
-              "type": "number",
-              "format": "double"
-            }
-          },
-          {
-            "name": "week_1",
-            "in": "query",
-            "schema": {
-              "type": "number",
-              "format": "double"
-            }
-          },
-          {
-            "name": "week_2",
-            "in": "query",
-            "schema": {
-              "type": "number",
-              "format": "double"
-            }
-          },
-          {
-            "name": "week_3",
-            "in": "query",
-            "schema": {
-              "type": "number",
-              "format": "double"
-            }
-          },
-          {
-            "name": "week_4",
-            "in": "query",
-            "schema": {
-              "type": "number",
-              "format": "double"
-            }
-          },
-          {
-            "name": "week_5",
-            "in": "query",
-            "schema": {
-              "type": "number",
-              "format": "double"
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
@@ -121,41 +120,42 @@
         }
       }
     },
-    "/WeatherForecast": {
-      "get": {
+    "/insert_FixedExpenses": {
+      "post": {
         "tags": [
-          "WeatherForecast"
+          "Budgetty"
         ],
-        "operationId": "GetWeatherForecast",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Expense"
                 }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Expense"
                 }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Expense"
                 }
               }
             }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -163,25 +163,78 @@
   },
   "components": {
     "schemas": {
-      "WeatherForecast": {
+      "Expense": {
         "type": "object",
         "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
+          "id": {
             "type": "integer",
             "format": "int32"
           },
-          "temperatureF": {
+          "user_id": {
             "type": "integer",
-            "format": "int32",
-            "readOnly": true
+            "format": "int32"
           },
-          "summary": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
             "type": "string",
             "nullable": true
+          },
+          "expense_value": {
+            "type": "number",
+            "format": "double"
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MonthlyBudget": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date_month": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date_year": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "monthly_budget_value": {
+            "type": "number",
+            "format": "double"
+          },
+          "initial_monthly_budget": {
+            "type": "number",
+            "format": "double"
+          },
+          "week_1": {
+            "type": "number",
+            "format": "double"
+          },
+          "week_2": {
+            "type": "number",
+            "format": "double"
+          },
+          "week_3": {
+            "type": "number",
+            "format": "double"
+          },
+          "week_4": {
+            "type": "number",
+            "format": "double"
+          },
+          "week_5": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false

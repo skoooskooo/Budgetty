@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{2B64707F-6399-4FF7-8777-7FEC513A3451}|BudgettyWebApi\\BudgettyWebApi.csproj|solutionrelative:budgettywebapi\\controllers\\budgettycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B64707F-6399-4FF7-8777-7FEC513A3451}|BudgettyWebApi\\BudgettyWebApi.csproj|c:\\users\\gustavo.jose\\onedrive - unipartner it services, s.a\\documents\\angular training\\budgetty\\budgettywebapi\\budgettywebapi\\budgettywebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B64707F-6399-4FF7-8777-7FEC513A3451}|BudgettyWebApi\\BudgettyWebApi.csproj|solutionrelative:budgettywebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B64707F-6399-4FF7-8777-7FEC513A3451}|BudgettyWebApi\\BudgettyWebApi.csproj|c:\\users\\gustavo.jose\\onedrive - unipartner it services, s.a\\documents\\angular training\\budgetty\\budgettywebapi\\budgettywebapi\\budgettywebapi\\models\\monthlybudget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B64707F-6399-4FF7-8777-7FEC513A3451}|BudgettyWebApi\\BudgettyWebApi.csproj|solutionrelative:budgettywebapi\\models\\monthlybudget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B64707F-6399-4FF7-8777-7FEC513A3451}|BudgettyWebApi\\BudgettyWebApi.csproj|c:\\users\\gustavo.jose\\onedrive - unipartner it services, s.a\\documents\\angular training\\budgetty\\budgettywebapi\\budgettywebapi\\budgettywebapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B64707F-6399-4FF7-8777-7FEC513A3451}|BudgettyWebApi\\BudgettyWebApi.csproj|solutionrelative:budgettywebapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B64707F-6399-4FF7-8777-7FEC513A3451}|BudgettyWebApi\\BudgettyWebApi.csproj|c:\\users\\gustavo.jose\\onedrive - unipartner it services, s.a\\documents\\angular training\\budgetty\\budgettywebapi\\budgettywebapi\\budgettywebapi\\models\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B64707F-6399-4FF7-8777-7FEC513A3451}|BudgettyWebApi\\BudgettyWebApi.csproj|solutionrelative:budgettywebapi\\models\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B64707F-6399-4FF7-8777-7FEC513A3451}|BudgettyWebApi\\BudgettyWebApi.csproj|c:\\users\\gustavo.jose\\onedrive - unipartner it services, s.a\\documents\\angular training\\budgetty\\budgettywebapi\\budgettywebapi\\budgettywebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B64707F-6399-4FF7-8777-7FEC513A3451}|BudgettyWebApi\\BudgettyWebApi.csproj|solutionrelative:budgettywebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B64707F-6399-4FF7-8777-7FEC513A3451}|BudgettyWebApi\\BudgettyWebApi.csproj|c:\\users\\gustavo.jose\\onedrive - unipartner it services, s.a\\documents\\angular training\\budgetty\\budgettywebapi\\budgettywebapi\\budgettywebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -34,11 +38,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "MonthlyBudget.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo.jose\\OneDrive - Unipartner IT Services, S.A\\Documents\\Angular Training\\Budgetty\\budgettyWebApi\\BudgettyWebApi\\BudgettyWebApi\\Models\\MonthlyBudget.cs",
+              "RelativeDocumentMoniker": "BudgettyWebApi\\Models\\MonthlyBudget.cs",
+              "ToolTip": "C:\\Users\\gustavo.jose\\OneDrive - Unipartner IT Services, S.A\\Documents\\Angular Training\\Budgetty\\budgettyWebApi\\BudgettyWebApi\\BudgettyWebApi\\Models\\MonthlyBudget.cs",
+              "RelativeToolTip": "BudgettyWebApi\\Models\\MonthlyBudget.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T15:27:44.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Expense.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo.jose\\OneDrive - Unipartner IT Services, S.A\\Documents\\Angular Training\\Budgetty\\budgettyWebApi\\BudgettyWebApi\\BudgettyWebApi\\Models\\Expense.cs",
+              "RelativeDocumentMoniker": "BudgettyWebApi\\Models\\Expense.cs",
+              "ToolTip": "C:\\Users\\gustavo.jose\\OneDrive - Unipartner IT Services, S.A\\Documents\\Angular Training\\Budgetty\\budgettyWebApi\\BudgettyWebApi\\BudgettyWebApi\\Models\\Expense.cs",
+              "RelativeToolTip": "BudgettyWebApi\\Models\\Expense.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T13:45:41.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\gustavo.jose\\OneDrive - Unipartner IT Services, S.A\\Documents\\Angular Training\\Budgetty\\budgettyWebApi\\BudgettyWebApi\\BudgettyWebApi\\appsettings.json",
               "RelativeDocumentMoniker": "BudgettyWebApi\\appsettings.json",
@@ -46,7 +76,8 @@
               "RelativeToolTip": "BudgettyWebApi\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAACBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-11T14:54:36.638Z"
+              "WhenOpened": "2025-04-11T14:54:36.638Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -56,14 +87,14 @@
               "RelativeDocumentMoniker": "BudgettyWebApi\\Controllers\\BudgettyController.cs",
               "ToolTip": "C:\\Users\\gustavo.jose\\OneDrive - Unipartner IT Services, S.A\\Documents\\Angular Training\\Budgetty\\budgettyWebApi\\BudgettyWebApi\\BudgettyWebApi\\Controllers\\BudgettyController.cs",
               "RelativeToolTip": "BudgettyWebApi\\Controllers\\BudgettyController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAjwDsAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwF8AAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-11T14:54:04.315Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\gustavo.jose\\OneDrive - Unipartner IT Services, S.A\\Documents\\Angular Training\\Budgetty\\budgettyWebApi\\BudgettyWebApi\\BudgettyWebApi\\appsettings.Development.json",
               "RelativeDocumentMoniker": "BudgettyWebApi\\appsettings.Development.json",
@@ -71,23 +102,12 @@
               "RelativeToolTip": "BudgettyWebApi\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-11T15:39:14.293Z"
+              "WhenOpened": "2025-04-11T15:39:14.293Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo.jose\\OneDrive - Unipartner IT Services, S.A\\Documents\\Angular Training\\Budgetty\\budgettyWebApi\\BudgettyWebApi\\BudgettyWebApi\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "BudgettyWebApi\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "C:\\Users\\gustavo.jose\\OneDrive - Unipartner IT Services, S.A\\Documents\\Angular Training\\Budgetty\\budgettyWebApi\\BudgettyWebApi\\BudgettyWebApi\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "BudgettyWebApi\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T14:53:26.887Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\gustavo.jose\\OneDrive - Unipartner IT Services, S.A\\Documents\\Angular Training\\Budgetty\\budgettyWebApi\\BudgettyWebApi\\BudgettyWebApi\\Program.cs",
               "RelativeDocumentMoniker": "BudgettyWebApi\\Program.cs",
@@ -95,11 +115,12 @@
               "RelativeToolTip": "BudgettyWebApi\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T14:51:20.741Z"
+              "WhenOpened": "2025-04-11T14:51:20.741Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\gustavo.jose\\OneDrive - Unipartner IT Services, S.A\\Documents\\Angular Training\\Budgetty\\budgettyWebApi\\BudgettyWebApi\\BudgettyWebApi\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "BudgettyWebApi\\Properties\\launchSettings.json",
@@ -107,7 +128,8 @@
               "RelativeToolTip": "BudgettyWebApi\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-11T14:51:12.123Z"
+              "WhenOpened": "2025-04-11T14:51:12.123Z",
+              "EditorCaption": ""
             }
           ]
         }
