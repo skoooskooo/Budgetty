@@ -4,7 +4,7 @@ export class Expense {
   date?: string;
   description?: string;
   expense_value?: number; 
-  type?: number;
+  type?: ExpenseType;
 
   constructor(
     id?: number,
@@ -12,7 +12,7 @@ export class Expense {
     date?: string,
     description?: string,
     expense_value?: number,
-    type?: number
+    type?: ExpenseType
   ) {
     this.id = id;
     this.user_id = user_id;
@@ -21,4 +21,11 @@ export class Expense {
     this.expense_value = expense_value;
     this.type = type;
   }
+}
+
+export enum ExpenseType {
+  Groceries = 'Groceries',
+  Rent = 'Rent',
+  Entertainment = 'Entertainment',
+  Utilities = 'Utilities'
 }

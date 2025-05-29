@@ -15,23 +15,21 @@
 
 .item-description
 {
+  color: white;
     text-align: left; /* Horizontally center the text */
     flex: 1; /* Optional: Ensures equal space for description and value */
 }
 .item-value {
-    text-align: center; /* Horizontally center the text */
+  color: white;
+    text-align: right; 
+    margin-right: 20px;/* Horizontally center the text */
     flex: 1; /* Optional: Ensures equal space for description and value */
-}
-
-.description-input:focus,
-.value-input:focus {
-    border-bottom: 1px solid #ccc;
 }
 
 
 
 .fixed-expenses-container {
-    background-color: #595959;;
+    background-color: #1B1B1B;
     display: flex;
     flex-direction: column;
     max-height: 100;
@@ -41,46 +39,51 @@
 
 .inputs-container {
     display: flex;
-    
-    gap: 10px; /* Add spacing between input fields and the button */
+    margin: 5px;
+    gap: 5px; /* Add spacing between input fields and the button */
     align-items: center; /* Align inputs and button vertically */
   }
 
-  .item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-    border-bottom: 1px solid #ccc;
-  }
+
+.item:not(:last-child) {
+  border-bottom: 2px solid #ccc; /* Apply border only to items except the last one */
+}
+
+.item {
+
+  
+  display: flex;
+  height: 40px;
+  justify-content: space-between; /* Space between description, value, and remove button */
+  align-items: center; /* Vertically align all child elements */
+  padding: 8px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -1px;
+  font-size: 17px;  
+}
 
 
 
   .item-list-container {
+    outline: #595959 2px solid;
     max-height: 180px; 
+    background-color: #2A2A2A;
+    margin: 15px 5px 10px 8px;
     overflow-y: auto; 
     padding-left: 10px;
     padding-right: 10px;
-    background-color: white; 
-    border-radius: 0px;
+    border-radius: 10px;
   }
+
 .item-list {
+  background-color: #2A2A2A;
     list-style: none;
     margin: 0;
     padding: 0;
+    margin-top: 2px;
+    margin-bottom: 5px;
   }
 
-.item {
-
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between; /* Space between description, value, and remove button */
-    align-items: center; /* Vertically align all child elements */
-    padding: 8px;
-    border-bottom: 1px solid #ccc;
-    font-family: sans-serif;
-    font-size: 17px;
-}
 
 .remove-button {
     padding: 7px 15px;
@@ -104,6 +107,8 @@
 .value-input {
     padding: 8px;
     margin: 2px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -1px;
     background-color: #2A2A2A;
     font-size: 20px;
     border-radius: 10px;
@@ -114,5 +119,40 @@
     
 }
 
+.description-input:focus,
+.value-input:focus {
+    border: 2px solid #595959; /* Keep the border change if needed */
+    outline: none; /* Remove the default outline */
+    color: white; /* Ensure the text color remains white */
+    background-color: #2A2A2A; /* Ensure the background color remains consistent */
+}
 
 
+
+.svg-icon-container {
+  margin-left: auto; /* Push the icon to the far right */
+}
+
+.svg-icon { /* Push the SVG icon to the far right */
+  margin-left: auto; /* Push the SVG icon to the far right */
+  width: 24px; /* Set the width of the SVG icon */
+  height: 24px; /* Set the height of the SVG icon */
+  fill: #7D7D7D; /* Set the color of the SVG icon */
+  cursor: pointer; /* Add a pointer cursor for interactivity */
+}
+
+.svg-icon:hover {
+  fill: red; /* Change color on hover */
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+  transition: transform 0.2s ease-in-out, fill 0.2s ease-in-out;
+}
+
+.item-list-container {
+  overflow-y: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.item-list-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}

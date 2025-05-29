@@ -95,11 +95,15 @@
   color: #A4A4A4; /* Change text color to white *//* Slightly enlarge the button */
 }
 
+
 .overall-balance{
+  width: 100%;
   position: absolute;
   bottom: 0;
-  margin-bottom: 10px;;
+  margin-bottom: 20px;
 }
+
+
 
 .overall-balance-hidden {
   display: none; /* Hide the element by default */
@@ -127,43 +131,29 @@
 .balance-text-value{
   font-family:Arial, Helvetica, sans-serif ;
   font-weight: lighter;
-  font-size: 19px; 
+  font-size: 25px; 
   color: white;
-  margin-left: 10px;   
-  margin-right: 10px;
-  padding-left: 10px;
+  margin-left: 12px;   
+  margin-right: 12px;
+  height: 30px;
   outline: 2px solid #595959;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center ;
-  border-radius: 25px;
+  border-radius: 10px;
   background-color: #2A2A2A;
 }
 
 .navbar-item {
   align-items: center;
   width: 100%;
-  
   display: flex; /* Use flexbox to align the link and the icon horizontally */
   align-items: right; /* Vertically align the items */
   justify-content: space-between; /* Push the icon to the right */ /* Add padding for spacing */
 }
 
-.svg-icon-container {
-  margin-left: auto; /* Push the icon to the far right */
+.svg-icon { 
+  align-items: end;/* This will inherit the color from the parent element */ /* Add some spacing from the right edge */
+  transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
 }
 
-.svg-icon { /* Push the SVG icon to the far right */
-  margin-left: auto; /* Push the SVG icon to the far right */
-  width: 24px; /* Set the width of the SVG icon */
-  height: 24px; /* Set the height of the SVG icon */
-  fill: #7D7D7D; /* Set the color of the SVG icon */
-  cursor: pointer; /* Add a pointer cursor for interactivity */
-}
-
-.svg-icon:hover {
-  fill: #a4a4a4; /* Change color on hover */
-  transform: scale(1.1); /* Slightly enlarge the icon on hover */
-  transition: transform 0.2s ease-in-out, fill 0.2s ease-in-out;
-}

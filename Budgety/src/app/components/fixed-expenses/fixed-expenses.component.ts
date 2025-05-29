@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , ViewChild,ElementRef} from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Expense } from '../../models/expense.model';
@@ -13,7 +13,10 @@ export class FixedExpensesComponent {
 
   // PROPERTIES
   expenses: Array<Expense> = []; 
-  new_fixed_expense = new Expense(undefined, undefined, undefined, undefined, undefined,1);
+  new_fixed_expense = new Expense(undefined, undefined, undefined, undefined, undefined,undefined);
+
+
+  @ViewChild('itemListContainer') itemListContainer!: ElementRef;
 
   // METHODS
   AddFixedExpense(): void {
@@ -23,7 +26,12 @@ export class FixedExpensesComponent {
       this.new_fixed_expense.date = new Date(Date.now()).toISOString().split('T')[0];
       this.expenses.push({ ...this.new_fixed_expense });       
       console.log(this.expenses);
-      this.new_fixed_expense = new Expense(undefined, undefined, undefined, undefined, undefined,1); 
+      this.new_fixed_expense = new Expense(undefined, undefined, undefined, undefined, undefined,undefined); 
+
+      // Scroll to the last item
+      setTimeout(() => {
+        this.scrollToLastItem();
+      }, 0);
     }
   }
 
@@ -34,5 +42,11 @@ export class FixedExpensesComponent {
   public ExportExpenseList(): Array<Expense>
   {
     return this.expenses;
+  }
+
+
+  private scrollToLastItem(): void {
+    const container = this.itemListContainer.nativeElement;
+    container.scrollTop = container.scrollHeight;
   }
 }

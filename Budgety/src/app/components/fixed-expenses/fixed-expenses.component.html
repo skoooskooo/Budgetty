@@ -23,12 +23,14 @@
   </div>
 
   <!-- Expense List Section -->
-  <div class="item-list-container">
+  <div class="item-list-container" #itemListContainer *ngIf="expenses.length > 0">
     <ul class="item-list">
       <li *ngFor="let expense of expenses; let i = index" class="item">
         <span class="item-description">{{ expense.description }}</span>
         <span class="item-value">{{ expense.expense_value }} €</span>
-        <button class="remove-button" (click)="RemoveExpense(i)">Remove</button>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="svg-icon" viewBox="0 0 16 16" (click)="RemoveExpense(i)">
+          <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm3.5 8.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1 0-1h6a.5.5 0 0 1 .5.5z"/>
+        </svg>
       </li>
     </ul>
   </div>

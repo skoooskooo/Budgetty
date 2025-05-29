@@ -69,21 +69,14 @@ export class NavbarComponent {
       this.overallBalance.set(formattedBalance);
     });
   }
-
   openDialog(): void {
     const dialogRef = this.dialog.open(AddBudgetDialogComponent, {
       width: '420px',
-      panelClass: 'custom-dialog-container'
+      panelClass: 'custom-dialog-container',
+      autoFocus: false,
+      disableClose: false
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog closed with result:', result);
-      if (result) {
-        this.fetchOverallBalance(); // Refresh the overall balance after closing the dialog
-      }
-    });
-  }
-
+}
 
   //EVENTS
   ngOnInit(): void {

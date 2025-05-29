@@ -4,11 +4,22 @@ body{
   background-color: #2A2A2A;
 }
 
-.custom-dialog-container {
-    border-radius: 25px;
-    overflow: hidden;
-     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
+.custom-dialog-container  {
+  padding: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  outline: #595959 3px solid;
+  background-color: #1B1B1B; /* Set your desired ackground color */
+}
+
+.custom-dialog-container .mat-mdc-dialog-surface {
+  transition: transform 200ms ease-in-out;
+  transform-origin: center;
+}
+
+.cdk-overlay-pane.custom-dialog-container {
+  transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
+}
 
 
 .dialog-title{
@@ -16,19 +27,21 @@ body{
     font-weight: bold;
     letter-spacing: -1px;
     font-size: 25px;
-    color: #2A2A2A;
+    color: white;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0px;
+    margin-bottom: 25px;
   }
 
-  .dialog-title-small{
+  .dialog-title-bottom{
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     letter-spacing: -1px;
     font-size: 25px;
-    color: Black;
+    color: white;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 
 
@@ -38,7 +51,7 @@ body{
 .description-input:focus,
 .value-input:focus {
     outline: none; /* Remove the default outline */
-    border: 2px solid darkgray; /* Add a custom green border */
+    outline: 2px solid #595959; /* Add a custom green border */
     border-radius: 4px; /* Optional: Add rounded corners */
 }
 
@@ -61,7 +74,8 @@ body{
     flex:1;
     width: 200px;
     color: white;
-    height: 50px;
+    height: 40px;
+    
     background-color: #2A2A2A;
     outline: 2px solid #595959;
     border-radius: 10px;
@@ -75,24 +89,29 @@ body{
 }
 
 .ok-button:hover{
-    transform: scale(1.07);
+    transform: scale(1.02);
     transition: transform 0.1s ease-in-out;
 }
 
 .add-button {
-  padding: 8px 16px;
-  font-size: 16px;
-  width: 100px; /* Set a fixed width for the button */
-  background-color: #595959;
-  border: #2A2A2A 2px solid;
+  flex:1;
+  width: 20px;
   color: white;
-  border-radius: 10px;
+  height: 38px;
+  background-color: #2A2A2A;
+  outline: 2px solid #595959;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700px;
+  letter-spacing: -1px;
+  font-size: 20px;
   cursor: pointer;
+  border: none;
 }
 
 .add-button:hover {
-  transform: scale(1.01);
-  transition: transform 0.2s ease-in-out;
+  transform: scale(1.02);
+  transition: transform 0.1s ease-in-out;
 }
 
 .custom-error-toast {
@@ -132,4 +151,30 @@ body{
 
 .scrollable-expense-list > * {
   direction: ltr; /* Ensure the content inside remains left-to-right */
+}
+
+/* Custom styles To change Backdrop ( color behind the Dialog ) */
+.cdk-overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0.8); /* Set a dark semi-transparent background */
+}
+ 
+.mat-mdc-dialog-surface {
+  background-color: transparent !important; /* Set your desired background color */
+  border-radius: 0px; /* Match the dialog's border radius */
+  padding: 0 !important; /* Remove any default padding */
+  box-shadow: none; /* Optional: Remove any default shadow */
+}
+
+
+/* Hide the spinner buttons in number input fields */
+/* For Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
