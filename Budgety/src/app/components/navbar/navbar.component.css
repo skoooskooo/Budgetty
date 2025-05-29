@@ -41,8 +41,9 @@
 
 /* Hover effect for non-active links */
 .sidenav a:not(.active):hover { /* Visual effect only */
-  color: #a4a4a4;
-  transition: transform 0.3s ease-in-out;
+  color: white;
+  transition: color 0.7s ease-in-out; /* Smooth color transition on hover */
+
 }
 
 /* Style page content */
@@ -92,7 +93,8 @@
 }
 
 .add-budget-button:hover {
-  color: #A4A4A4; /* Change text color to white *//* Slightly enlarge the button */
+  color: #A4A4A4; 
+  /* Change text color to white *//* Slightly enlarge the button */
 }
 
 
@@ -154,6 +156,6 @@
 
 .svg-icon { 
   align-items: end;/* This will inherit the color from the parent element */ /* Add some spacing from the right edge */
-  transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+  
 }
 
