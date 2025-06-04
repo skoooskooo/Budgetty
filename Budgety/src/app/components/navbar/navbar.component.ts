@@ -39,9 +39,7 @@ export class NavbarComponent {
     this.activeLink = currentRoute || 'overview'; 
   }
 
-
-
-  private fetchOverallBalance(): void 
+  public fetchOverallBalance(): void 
   {
     this.userDataService.getMonthlyBudget(this.userId).subscribe((data: any) => 
     {

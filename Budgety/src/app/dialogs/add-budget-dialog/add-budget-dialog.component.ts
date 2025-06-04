@@ -11,7 +11,7 @@ import { UserDataServiceService } from '../../services/user-data-service/user-da
 import { MonthlyBudget } from '../../models/monthly-budget.model';
 import { UtilsService } from '../../services/utils/utils.service';
 import { Expense } from '../../models/expense.model';
-
+import { firstValueFrom } from 'rxjs';
 @Component({
     selector: 'app-add-budget-dialog',
     standalone: true,
@@ -31,75 +31,87 @@ export class AddBudgetDialogComponent {
     @ViewChild(CurrencyInputComponent) currencyInputComponent!: CurrencyInputComponent;
     @ViewChild(FixedExpensesComponent) fixedExpensesComponent!: FixedExpensesComponent; // Reference to the FixedExpensesComponent
     
-    // PROPERTIES
-    public budget_value: number = 0; 
-    public budget_after_expenses: number = 0;
+  // PROPERTIES
+  public budget_value: number = 0; 
+  public budget_after_expenses: number = 0;
     
 
+  // METHODS
+  public async AddBudget(): Promise<void> {
 
-    // METHODS
-    public AddBudget(): void 
+    try {
+      if (!this.Validate_Budget_Value()) 
+        return;
+
+      await this.Submit_Expenses(); // Will throw if it fails
+      await this.Submit_MonthlyBudget(); // Only runs if expenses succeeded
+
+      this.budget_dialog_ref.close();
+    } 
+    catch (error)  {
+      console.error("Error adding budget:", error);
+      this.toastService.show_Error("There was an error adding the budget.");
+    }
+  }
+
+  async Submit_Expenses(): Promise<void> {
+
+    //Gets expense List from Fixed Expense Component Export
+    const expense_list = this.fixedExpensesComponent.ExportExpenseList();
+
+    //If there are expenses
+    if(expense_list.length > 0) 
     {
-      try
-      {
-        if (!(this.Validate_Budget_Value()))    
-          return;
+      //Calculates the budget after expenses
+      this.budget_after_expenses = this.budget_value - (expense_list.reduce((sum, item) => sum + (item.expense_value ?? 0), 0));
+      console.log('Current Expense List:', expense_list);
       
-        this.Submit_Expenses();
-        this.Submit_MonthlyBudget();
-
-        this.budget_dialog_ref.close();
-      } 
-      catch (error)
-      { 
-        this.toastService.show_Error("There was an error adding the budget.");
-        console.error("Error adding budget:", error);
-      }
-    }
-
-    Submit_Expenses(): void {
-
-      const expense_list = this.fixedExpensesComponent.ExportExpenseList();
-
-      if(expense_list.length > 0)//If there are expenses
+      //Tries to insert the expenses into the database
+      try 
       {
-        this.budget_after_expenses = this.budget_value - (expense_list.reduce((sum, item) => sum + (item.expense_value ?? 0), 0));
-
-        console.log('Current Expense List:', expense_list);
-        this.userDataService.insert_Fixed_Expenses(expense_list).subscribe((data: any) => 
-        {
-          console.log("API Response:", data);
-        },
-        (error: any) => 
-        {
-          console.error("Error adding expenses:", error);
-          this.toastService.show_Error("Error adding expenses.");
-        });
+        const data = await firstValueFrom(this.userDataService.insert_Fixed_Expenses(expense_list));
+        console.log("API Response:", data);
+      } 
+      catch (error) 
+      {
+        console.error("Error adding expenses:", error);
+        this.toastService.show_Error("Error adding expenses.");
+        throw error; // Rethrows the error to be caught in the outer try-catch of the AddBudget method
       }
     }
+  }
 
-    Submit_MonthlyBudget(): void
-    { 
-      const weekly_budget = this.utilsService.get_Week_Values(this.budget_after_expenses);
-      const user_id = 1; // Assuming user_id is 1 for this example  
+  async Submit_MonthlyBudget(): Promise<void> { 
 
-      const monthlyBudget: MonthlyBudget = new MonthlyBudget(user_id,
-        this.utilsService.get_Current_Month_Number(), 
-        this.utilsService.get_Current_Year_Number(),
-        this.budget_after_expenses,                                
-        this.budget_after_expenses,                                
-        weekly_budget[0],                           
-        weekly_budget[1],                             
-        weekly_budget[2],                           
-        weekly_budget[3],              
-        weekly_budget[4]                      
-      );
-         
-      //Adds Values to Database
-      this.Insert_Monthly_Budget(monthlyBudget);
+    const weekly_budget = this.utilsService.get_Week_Values(this.budget_after_expenses);
+    const user_id = 1; // Assuming user_id is 1 for this example  
+    const monthlyBudget: MonthlyBudget = new MonthlyBudget(user_id,
+      this.utilsService.get_Current_Month_Number(), 
+      this.utilsService.get_Current_Year_Number(),
+      this.budget_after_expenses,                                
+      this.budget_after_expenses,                                
+      weekly_budget[0],                           
+      weekly_budget[1],                             
+      weekly_budget[2],                           
+      weekly_budget[3],              
+      weekly_budget[4]                      
+    );
+       
+    //Adds Values to Database
+    try 
+    {
+      await firstValueFrom(this.Insert_Monthly_Budget(monthlyBudget));
+    } 
+    catch (error) 
+    {
+      console.error("Error adding monthly budget:", error);
+      this.toastService.show_Error("Error adding monthly budget.");
+      throw error;
     }
+  }
 
-    
+
+
 
     Validate_Budget_Value(): boolean 
     {
@@ -116,27 +128,8 @@ export class AddBudgetDialogComponent {
       return true; 
     }
     
-    Insert_Monthly_Budget(monthlyBudget: MonthlyBudget): void
-    {
-      try{
-
-      
-        this.userDataService.insertMonthlyBudget(monthlyBudget).subscribe((data: any) => 
-        {
-          console.log("API Response:", data);
-          this.toastService.show_Success("Monthly Budget added successfully.");
-        },
-        (error: any) => 
-        {
-          console.error("Error adding budget:", error);
-          this.toastService.show_Error("Error adding budget.");
-        });
-      }
-      catch (error) 
-      {
-        console.error("Error adding budget:", error);
-        this.toastService.show_Error("Error adding budget.");
-      }
+    Insert_Monthly_Budget(monthlyBudget: MonthlyBudget) {
+      return this.userDataService.insertMonthlyBudget(monthlyBudget);
     }
 
     Click_Ok(): void 
@@ -144,7 +137,7 @@ export class AddBudgetDialogComponent {
         this.AddBudget();
     }
 
-constructor(public toastService:ToastService, 
+    constructor(public toastService:ToastService, 
             public userDataService: UserDataServiceService,
             private utilsService: UtilsService,
             public budget_dialog_ref: MatDialogRef<AddBudgetDialogComponent>) { } // Constructor to initialize services
